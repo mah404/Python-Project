@@ -1,0 +1,7 @@
+ticket_id,requester,category,priority,status,short_description
+HD-1001,jhartmann,Microsoft 365,hoch,offen,Outlook startet langsam und friert ein
+HD-1002,dweber,Netzwerk,hoch,offen,VPN Verbindung bricht regelmäßig ab
+HD-1003,lsommer,Hardware,mittel,in_bearbeitung,Monitor am Arbeitsplatz bleibt schwarz
+HD-1004,mvogt,Benutzerkonto,mittel,gelöst,Neues Konto für Praktikum vorbereiten
+HD-1005,nklein,Dokumentation,niedrig,offen,Supportbericht für Monatsübersicht fehlt
+HD-1006,jhartmann,Drucker,mittel,offen,Standarddrucker ist falsch gesetzt

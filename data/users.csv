@@ -1,0 +1,7 @@
+username,name,department,email,active
+mvogt,Mara Vogt,IT-Support,mara.vogt@nordstern.local,yes
+lsommer,Lea Sommer,IT-Support,lea.sommer@nordstern.local,yes
+jhartmann,Julia Hartmann,Buchhaltung,julia.hartmann@nordstern.local,yes
+dweber,David Weber,Vertrieb,david.weber@nordstern.local,yes
+nklein,Noah Klein,Dokumentation,,yes
+archiv01,Archiv Benutzer,Archiv,archiv@nordstern.local,no
