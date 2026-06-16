@@ -1,0 +1,10 @@
+System Snapshot 
+==================
+Date: Tue Jun 16 16:14:15 CEST 2026
+Hostname: mahtab
+User: root 
+Current Directory: /mnt/c/Users/mahta/pythonfinalproject
+
+Free Disk space
+Filesystem      Size  Used Avail Use% Mounted on
+C:\             952G  472G  481G  50% /mnt/c
