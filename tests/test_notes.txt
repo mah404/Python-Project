@@ -1,0 +1,175 @@
+Testnotizen Nordstern Helpdesk Tool
+
+Test 1: Python-Programm startet
+Befehl:
+python src/main.py
+
+Erwartetes Ergebnis:
+Das Menü mit 8 Auswahlpunkten wird angezeigt.
+
+Tatsächliches Ergebnis:
+Das Menü wurde angezeigt.
+
+Status:
+Bestanden
+
+
+Test 2: Benutzerliste prüfen
+Menüpunkt:
+2
+
+Erwartetes Ergebnis:
+Das Tool erkennt die fehlende E-Mail-Adresse bei nklein und den inaktiven Benutzer archiv01.
+
+Tatsächliches Ergebnis:
+Missing field: email for user nklein
+Inactive user: archiv01 - Archiv Benutzer
+
+Status:
+Bestanden
+
+
+Test 3: Ticketübersicht anzeigen
+Menüpunkt:
+3
+
+Erwartetes Ergebnis:
+Alle 6 Tickets aus tickets.csv werden angezeigt.
+
+Tatsächliches Ergebnis:
+Die Tickets HD-1001 bis HD-1006 wurden angezeigt.
+
+Status:
+Bestanden
+
+
+Test 4: Tickets auswerten
+Menüpunkt:
+4
+
+Erwartetes Ergebnis:
+Tickets werden nach Status, Priorität und Kategorie gezählt.
+
+Tatsächliches Ergebnis:
+offen: 4
+in_bearbeitung: 1
+gelöst: 1
+hoch: 2
+mittel: 3
+niedrig: 1
+
+Status:
+Bestanden
+
+
+Test 5: Kritische offene Tickets anzeigen
+Menüpunkt:
+5
+
+Erwartetes Ergebnis:
+Offene Tickets mit hoher Priorität werden angezeigt.
+
+Tatsächliches Ergebnis:
+HD-1001 wurde angezeigt.
+HD-1002 wurde angezeigt.
+
+Bewertung:
+HD-1002 sollte zuerst geprüft werden, weil es eine VPN-Verbindungsstörung betrifft und der Benutzer dadurch möglicherweise nicht arbeiten kann.
+
+Status:
+Bestanden
+
+
+Test 6: Logdatei auswerten
+Menüpunkt:
+6
+
+Erwartetes Ergebnis:
+INFO, WARNING und ERROR werden gezählt.
+
+Tatsächliches Ergebnis:
+INFO: 2
+WARNING: 2
+ERROR: 2
+
+Status:
+Bestanden
+
+
+Test 7: Supportbericht erzeugen
+Menüpunkt:
+7
+
+Erwartetes Ergebnis:
+Im Ordner reports wird die Datei support_report.txt erstellt.
+
+Tatsächliches Ergebnis:
+Die Datei reports/support_report.txt wurde erstellt.
+
+Status:
+Bestanden
+
+
+Test 8: Falsche Menüeingabe
+Menüpunkt:
+9
+
+Erwartetes Ergebnis:
+Das Programm zeigt eine verständliche Fehlermeldung.
+
+Tatsächliches Ergebnis:
+Invalid input. Please choose a number from 1 to 8.
+
+Status:
+Bestanden
+
+
+Test 9: Fehlende users.csv testen
+Durchführung:
+Die Datei data/users.csv wurde kurzzeitig in users_backup.csv umbenannt.
+Danach wurde Menüpunkt 2 getestet.
+
+Erwartetes Ergebnis:
+Das Tool meldet, dass users.csv fehlt.
+
+Tatsächliches Ergebnis:
+ERROR: users.csv was not found.
+
+Danach wurde die Datei wieder zurückbenannt.
+
+Status:
+Bestanden
+
+
+Test 10: Fehlende tickets.csv testen
+Durchführung:
+Die Datei data/tickets.csv wurde kurzzeitig in tickets_backup.csv umbenannt.
+Danach wurde Menüpunkt 3 getestet.
+
+Erwartetes Ergebnis:
+Das Tool meldet, dass tickets.csv fehlt.
+
+Tatsächliches Ergebnis:
+ERROR: tickets.csv was not found.
+
+Danach wurde die Datei wieder zurückbenannt.
+
+Status:
+Bestanden
+
+
+Test 11: Fehlende support.log testen
+Durchführung:
+Die Datei data/support.log wurde kurzzeitig in support_backup.log umbenannt.
+Danach wurde Menüpunkt 6 getestet.
+
+Erwartetes Ergebnis:
+Das Tool meldet, dass support.log fehlt und bleibt weiter nutzbar.
+
+Tatsächliches Ergebnis:
+ERROR: support.log was not found.
+
+Danach wurde die Datei wieder zurückbenannt.
+
+Status:
+Bestanden
