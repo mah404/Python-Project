@@ -111,3 +111,169 @@ Aktuell sind die Menüpunkte als Platzhalter vorhanden. Die eigentlichen Funktio
 Damit ist die grundlegende Struktur des Python-Hauptprogramms bereits vorbereitet.
 
 ![alt text](<Screenshot 2026-06-16 161438.png>)
+
+
+# 6. Verbindliche Supportfälle
+
+## Fall 1 – Fehlende Benutzerdaten
+
+### Ausgangssituation
+
+In der Datei `users.csv` wurde geprüft, ob alle Benutzer die erforderlichen Pflichtangaben besitzen.
+
+### Verwendete Funktion
+
+Menüpunkt 2 – Check user list
+
+### Ergebnis
+
+Das Tool hat erkannt, dass beim Benutzer **nklein** die E-Mail-Adresse fehlt. Zusätzlich wurde angezeigt, dass der Benutzer **archiv01** als inaktiv markiert ist.
+
+### Nachweis
+
+Siehe Screenshot am Ende der Dokumentation.
+
+---
+
+## Fall 2 – Hoch priorisiertes VPN Ticket
+
+### Ausgangssituation
+
+Es sollte geprüft werden, welche offenen Tickets eine hohe Priorität besitzen.
+
+### Verwendete Funktion
+
+Menüpunkt 5 – Show critical open tickets
+
+### Ergebnis
+
+Das Tool hat die beiden kritischen Tickets **HD-1001** und **HD-1002** angezeigt.
+
+Aus meiner Sicht sollte zuerst **HD-1002** bearbeitet werden, da eine VPN-Verbindung regelmäßig abbricht und dadurch die Arbeit von Benutzern direkt beeinträchtigt werden kann.
+
+### Nachweis
+
+Siehe Screenshot am Ende der Dokumentation.
+
+---
+
+## Fall 3 – Logauffälligkeiten
+
+### Ausgangssituation
+
+Die Logdatei `support.log` wurde ausgewertet, um mögliche Fehler und Warnungen zu erkennen.
+
+### Verwendete Funktion
+
+Menüpunkt 6 – Analyze log file
+
+### Ergebnis
+
+Das Tool hat die Logdatei erfolgreich analysiert.
+
+Gefundene Einträge:
+
+* INFO: 2
+* WARNING: 2
+* ERROR: 2
+
+Dadurch können kritische Ereignisse schneller erkannt werden.
+
+### Nachweis
+
+Siehe Screenshot am Ende der Dokumentation.
+
+---
+
+## Fall 4 – Supportbericht für Teamleitung
+
+### Ausgangssituation
+
+Für die Teamleitung sollte ein automatischer Supportbericht erstellt werden.
+
+### Verwendete Funktion
+
+Menüpunkt 7 – Create support report
+
+### Ergebnis
+
+Der Bericht wurde erfolgreich erstellt und im Ordner `reports` als Datei `support_report.txt` gespeichert.
+
+Der Bericht enthält Informationen über Benutzer, Tickets, Logmeldungen sowie eine kurze technische Bewertung.
+
+### Nachweis
+
+Siehe Screenshot am Ende der Dokumentation.
+
+---
+
+## Fall 5 – Fehlende Eingabedatei
+
+### Ausgangssituation
+
+Um die Fehlerbehandlung zu testen, wurde eine Eingabedatei vorübergehend umbenannt.
+
+### Verwendete Funktion
+
+Benutzerprüfung über Menüpunkt 2
+
+### Ergebnis
+
+Das Tool hat die fehlende Datei erkannt und eine verständliche Fehlermeldung ausgegeben. Das Programm ist dabei nicht abgestürzt und konnte weiterhin verwendet werden.
+
+### Nachweis
+
+Siehe Screenshot am Ende der Dokumentation.
+
+---
+
+## Fall 6 – Übergabe an Supportteam
+
+### Ausgangssituation
+
+Für die Mitarbeiterin Lea Sommer sollte eine kurze Anleitung erstellt werden.
+
+### Verwendete Funktion
+
+Bedienungsanleitung
+
+### Ergebnis
+
+Es wurde eine einfache Anleitung erstellt, mit der das Tool gestartet und die wichtigsten Funktionen verwendet werden können.
+
+### Kurzanleitung
+
+Tool starten:
+
+```bash
+./scripts/start_helpdesk_tool.sh
+```
+
+Snapshot erstellen:
+
+```bash
+./scripts/collect_snapshot.sh
+```
+
+Wichtige Menüfunktionen:
+
+* 1 = System Snapshot anzeigen
+* 2 = Benutzer prüfen
+* 3 = Ticketübersicht anzeigen
+* 4 = Tickets analysieren
+* 5 = Kritische Tickets anzeigen
+* 6 = Logdatei analysieren
+* 7 = Supportbericht erstellen
+* 8 = Programm beenden
+
+### Nachweis
+
+Siehe Screenshot am Ende der Dokumentation.
+
+---
+
+## Screenshots
+
+![alt text](<falls.png>)
+![alt text](<falls2.png>)
+![alt text](<falls3.png>)
