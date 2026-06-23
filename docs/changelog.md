@@ -8,13 +8,16 @@ Im Ordner `data` wurden die Startdateien `users.csv`, `tickets.csv` und `support
 
 ## Stand 2: Bash-Skripte und Python-Menü umgesetzt
 
-Die Bash-Skripte `start_helpdesk_tool.sh` und `collect_snapshot.sh` wurden erstellt.
+Im zweiten Entwicklungsschritt habe ich die beiden Bash-Skripte `start_helpdesk_tool.sh` und `collect_snapshot.sh` erstellt.
 
-Das Startskript prüft, ob Python 3 vorhanden ist, ob die benötigten Projektordner existieren und ob das Python-Hauptprogramm vorhanden ist. Danach startet es das Helpdesk-Tool.
+Das Skript `start_helpdesk_tool.sh` dient zum Starten des Helpdesk-Tools. Vor dem Start werden einige wichtige Prüfungen durchgeführt. Dabei wird kontrolliert, ob Python 3 installiert ist, ob die benötigten Projektordner vorhanden sind und ob sich die Datei `main.py` im Ordner `src` befindet. Erst nach erfolgreicher Prüfung wird das Python-Programm gestartet.
 
-Das Snapshot-Skript erstellt eine Systemmomentaufnahme mit Datum, Hostname, Benutzer, aktuellem Pfad und freiem Speicherplatz. Die Ausgabe wird im Ordner `reports` gespeichert.
+Mit dem Skript `collect_snapshot.sh` kann eine Systemmomentaufnahme erstellt werden. Dabei werden Informationen wie Datum, Hostname, aktueller Benutzer, aktueller Pfad sowie der verfügbare Speicherplatz erfasst und automatisch im Ordner `reports` gespeichert.
 
-Außerdem wurde das Python-Hauptprogramm `src/main.py` mit einer Menüführung erstellt. Das Menü enthält acht Punkte für typische Supportaufgaben.
+Zusätzlich habe ich das Python-Hauptprogramm `src/main.py` erstellt. Darin wurde eine Menüführung mit acht Funktionen umgesetzt. Über das Menü können Benutzerdaten geprüft, Tickets ausgewertet, Logdateien analysiert und Supportberichte erstellt werden.
+
+Nach mehreren Tests konnten beide Bash-Skripte sowie die Menüführung erfolgreich ausgeführt werden.
+
 
 ## Stand 3: Auswertungen, Bericht und Fehlerbehandlung fertiggestellt
 
