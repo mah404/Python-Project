@@ -2,8 +2,7 @@ import csv
 import os
 from datetime import datetime
 import socket
-
-
+#as.path = tools for working with file paths. os.path.dirname() gets the directory name of a path, and os.path.abspath() gets the absolute path of a file. 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(BASE_DIR, "data")
 REPORTS_DIR = os.path.join(BASE_DIR, "reports")
@@ -26,6 +25,7 @@ def load_users():
         return users
 
     except Exception as error:
+        #explains that if there is an error reading the users.csv file, it will print an error message and return an empty list.
         print(f"ERROR reading users.csv: {error}")
         return []
 
@@ -40,10 +40,8 @@ def get_missing_user_fields(users):
 
         for field in required_fields:
             if user.get(field, "").strip() == "":
-                missing_entries.append(
-                    f"Missing field: {field} for user {username}"
-                )
-
+                missing_entries.append(f"Missing field: {field} for user {username}")
+    # missing_entries is a list that contains the missing required fields for each user. The function returns this list to the caller.
     return missing_entries
 
 
@@ -67,7 +65,9 @@ def validate_users():
 
     for user in users:
         if user.get("active", "").lower() == "no":
+
             print(f"Inactive user: {user.get('username')} - {user.get('name')}")
+# - between the | and the next text, it will print the username and name of the inactive user. You
 
 
 def load_tickets():
@@ -180,6 +180,7 @@ def analyze_log():
         with open(log_file, "r", encoding="utf-8") as file:
             for line in file:
                 if "INFO" in line:
+                    # += means to add 1 to the current value of counts["INFO"].
                     counts["INFO"] += 1
                 elif "WARNING" in line:
                     counts["WARNING"] += 1
@@ -200,6 +201,7 @@ def analyze_log():
 
 
 def show_system_snapshot():
+    # os.path = tools for working with file paths.
     # This function reads the snapshot file from the reports folder.
     snapshot_file = os.path.join(REPORTS_DIR, "system_snapshot.txt")
 
@@ -209,6 +211,7 @@ def show_system_snapshot():
         return
 
     try:
+        # r stands for read mode, which is the default mode for opening files.
         with open(snapshot_file, "r", encoding="utf-8") as file:
             print(file.read())
 
@@ -232,21 +235,22 @@ def create_report():
     log_counts = analyze_log()
 
     if not os.path.exists(REPORTS_DIR):
+        # os.path.exists() checks if a path exists, and os.makedirs() creates the directory
         os.makedirs(REPORTS_DIR)
 
     report_file = os.path.join(REPORTS_DIR, "support_report.txt")
-
+    # t for in tickets is a list comprehension that iterates over each ticket in the tickets list. It checks if the ticket's status is "offen" (open) and includes it in the open_tickets list if the condition is met.
     open_tickets = [t for t in tickets if t.get("status") == "offen"]
     high_priority_tickets = [t for t in tickets if t.get("priority") == "hoch"]
     critical_tickets = [
-        t for t in tickets
-        if t.get("priority") == "hoch" and t.get("status") == "offen"
+        t for t in tickets if t.get("priority") == "hoch" and t.get("status") == "offen"
     ]
 
     missing_entries = get_missing_user_fields(users)
 
     try:
         with open(report_file, "w", encoding="utf-8") as file:
+            # \n means a new line, so the next text will be written on a new line in the file.
             file.write("Nordstern Helpdesk Support Report\n")
             file.write("=================================\n")
             file.write(f"Created at: {datetime.now()}\n")
@@ -323,6 +327,7 @@ def main_menu():
             create_report()
         elif choice == "8":
             print("Program ended.")
+            # bkreak means to exit the loop and end the program.
             break
         else:
             print("Invalid input. Please choose a number from 1 to 8.")
